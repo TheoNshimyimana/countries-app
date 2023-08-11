@@ -10,6 +10,7 @@ h1 {
   color: #ffffff;
   text-align: center;
 }
+
 #continents--form {
   display: flex;
   justify-content: flex-end;
@@ -27,11 +28,16 @@ button {
   padding: 5px 10px;
 }
 
-#selected--continent {
+#selected--continent,
+#search--input {
   font-weight: 500;
   font-size: 16px;
   padding: 5px;
+  margin-left: 1.6rem;
 }
+
+
+
 
 #countries--list {
   display: grid;
@@ -39,4 +45,9 @@ button {
   background-color: #f2f3f6;
   margin: 10px;
   padding: 10px;
+}
+
+#country--searched{
+background: #f2f3f6;
+justify-content: center;
 }

@@ -18,6 +18,24 @@ const getCountryData = async function () {
       return 0;
     });
 
+    const searchInput = document.getElementById('search--input');
+    const searchButton = document.getElementById('search--button');
+
+    searchButton.addEventListener('click', () => {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      const searchedCountry = data.find((country) =>
+        country.name.common.toLowerCase().includes(searchTerm)
+      );
+
+      if (searchedCountry) {
+        
+        displayCountries([searchedCountry], countryList);
+      } else {
+
+        countryList.innerHTML = '<p>No matching country found. Please try again</p>';
+      }
+    });
+
     continentForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const selectedContinent = document.getElementById(
@@ -28,6 +46,7 @@ const getCountryData = async function () {
         (country) =>
           selectedContinent === '' || country.region === selectedContinent
       );
+
       displayCountries(filteredData, countryList);
     });
 
@@ -46,7 +65,7 @@ const displayCountries = function (countries, container) {
     const capital = country.capital;
     const location = country.region;
     const population = country.population;
-    const area = country.area ;
+    const area = country.area;
 
     const countryDetails = `
       <div>
