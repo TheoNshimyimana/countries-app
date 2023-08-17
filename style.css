@@ -1,53 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  color: #000000;
-  background-color: #51bb7b;
   margin: 0;
   padding: 0;
 }
 
-h1 {
-  color: #ffffff;
-  text-align: center;
-}
-
-#continents--form {
+header {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 1.6rem;
-  gap: 16px;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+.country-card {
+  background: #ffffff;
+  padding: 2rem 3rem;
+  box-shadow: 3px 6px #f8f0e5;
+  border-radius: 5px;
+  margin: 0 0 1rem 1rem;
+  height: 400px;
 }
 
-button {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  color: #000000;
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+#form--data {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 30px;
   font-weight: 500;
-  color: #ffffff;
   background: #f94c10;
   padding: 5px 10px;
+  border: 0;
 }
 
-#selected--continent,
-#search--input {
+#selected--continent {
   font-weight: 500;
   font-size: 16px;
-  padding: 5px;
   margin-left: 1.6rem;
 }
-
-
-
-
+#selected--continent {
+  padding: 3px 1.6px;
+  border-radius: 5px;
+}
 #countries--list {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  background-color: #f2f3f6;
-  margin: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  padding: 0 10px;
 }
 
-#country--searched{
-background: #f2f3f6;
-justify-content: center;
+#search {
+  max-width: 400px;
+  width: 100%;
+}
+#search #input {
+  position: relative;
+  height: 35px;
+  min-width: 500px;
+  margin: auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+#input input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  background: #fff;
+  outline: 0;
+  border: none;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+#input .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  background: #f94c10;
+  height: 100%;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+hr {
+  opacity: 0;
+}
+
+::placeholder{
+  color: #ccc;
 }

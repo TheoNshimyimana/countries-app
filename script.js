@@ -1,3 +1,10 @@
+
+const modeToggle = document.getElementById('modeToggle');
+const body = document.body;
+
+modeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
 const getCountryData = async function () {
   try {
     const countryList = document.getElementById('countries--list');
@@ -19,24 +26,23 @@ const getCountryData = async function () {
     });
 
     const searchInput = document.getElementById('search--input');
-    const searchButton = document.getElementById('search--button');
+    const btnSearch = document.getElementById('search--button');
 
-    searchButton.addEventListener('click', () => {
+    btnSearch.addEventListener('click', () => {
       const searchTerm = searchInput.value.trim().toLowerCase();
       const searchedCountry = data.find((country) =>
         country.name.common.toLowerCase().includes(searchTerm)
       );
 
       if (searchedCountry) {
-        
         displayCountries([searchedCountry], countryList);
       } else {
-
-        countryList.innerHTML = '<p>No matching country found. Please try again</p>';
+        countryList.innerHTML =
+          '<p>No matching country found. Please try again</p>';
       }
     });
 
-    continentForm.addEventListener('submit', (event) => {
+    continentForm.addEventListener('change', (event) => {
       event.preventDefault();
       const selectedContinent = document.getElementById(
         'selected--continent'
@@ -68,9 +74,9 @@ const displayCountries = function (countries, container) {
     const area = country.area;
 
     const countryDetails = `
-      <div>
-        <h2>${name}</h2>
-        <img src="${flag}" alt="${name} Flag" width="100">
+      <div class="country-card">
+      <img src="${flag}" alt="${name} Flag" width="200" height= "120">
+      <h2>${name}</h2>
         <p>Capital: ${capital}</p>
         <p>Location: ${location}</p>
         <p>Population: ${population}</p>

@@ -4,29 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countries App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dark.css" />
   </head>
   <body>
-    <h1>Countries App</h1>
-    <div>
-  <input type="text" id="search--input" placeholder="Search for a country">
-  <button id="search--button">Search</button>
-</div>
+    <header>
+      <h1>Country App</h1>
+      <div>
+        <button id="modeToggle">Dark mode</button>
+      </div>
+    </header>
 
-    <div id="form--data" >
-      <form id="continents--form">
-        <select id="selected--continent">
-          <option value="">All Continents</option>
-          <option value="Americas">Americas</option>
-          <option value="Africa">Africa</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-          <option value="Antarctic">Antarctic</option>
-        </select>
-        <button type="submit">Search</button>
-      </form>
+    <nav id="container">
+      <div id="search">
+      <div id="input">
+        <input type="text" id="search--input" placeholder="Enter a country name..."  />
+        <label for="" class="icon">
+          <i class="fas fa-search" id="search--button"></i>
+        </label>
+      </div>
     </div>
+
+      <div id="form--data">
+        <form id="continents--form">
+          <select id="selected--continent">
+            <option value="">All Continents</option>
+            <option value="Americas">Americas</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+            <option value="Antarctic">Antarctic</option>
+          </select>
+        </form>
+      </div>
+    </nav>
 
     <div id="countries--list"></div>
 
